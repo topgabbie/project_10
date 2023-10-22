@@ -9,7 +9,7 @@ To implement a Nginx load balancer based on HTTPS and create a domain name for o
 ### Steps
 
 1. Create a new EC2 VM on Ubuntu server.
-2. Create an inbound rule for HTTPS(port 8) and HTTPS( Port 443).
+2. Create an inbound rule for HTTP(port 80) and HTTPS( Port 443).
 3. Update the `/etc/hosts` to the Webservers name as shown below
     ![/etc/host](images/hosts%20file.png)
 4. Update your instance and install Nginx.
@@ -43,11 +43,11 @@ To implement a Nginx load balancer based on HTTPS and create a domain name for o
 
 ### Registering A new Domain Name and Assigning an Elastic IP to the Nginx server
 
-### Steps
+ Steps
 
 1. In order to get a valid SSSL certificate, I registered a new domain name `www.mdskillz.com.ng` using `www.hostafrica.com` as the provider.
         ![domainreg](images/domain%20reg.png)
-2. The next step is to create a Elastic IP and link it to the Nginx Server. This ensure that the IP of our server does not change even after the server is stopped or restarted. The is done with the following steps: 
+2. The next step is to create a Elastic IP and link it to the Nginx Server. This ensure that the IP of our server does not change even after the server is stopped or restarted. The is done with the following steps:
 
     - Navigate to the Elastic IP section in on the AWS console
 
@@ -86,4 +86,4 @@ To implement a Nginx load balancer based on HTTPS and create a domain name for o
 
         sudo ln -s /snap/bin/certbot /usr/bin/certbot
         sudo certbot --nginx
-5. upon completion, re-access the webpage using the HTTPS protocol
+5. Upon completion, re-access the webpage using the HTTPS protocol
